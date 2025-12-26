@@ -59,6 +59,7 @@ pass
 def despedida():
     """Muestra mensaje de despedida."""
     # TODO: Implementar
-    pass
 
-eliminar_tarea(1)
+    print(Fore.RED+f"NOS{Fore.BLUE} APENA{Fore.RED} QUE YA TE VAYAS\n"
+                   f"{Fore.GREEN} HASTA LA PRÓXIMA! {Fore.YELLOW}:D")
+    pass
