@@ -61,5 +61,5 @@ def despedida():
     # TODO: Implementar
 
     print(Fore.RED+f"NOS{Fore.BLUE} APENA{Fore.RED} QUE YA TE VAYAS\n"
-                   f"{Fore.GREEN} HASTA LA PRÓXIMA! {Fore.YELLOW}:D")
+                   f"{Fore.GREEN} HASTA LA PRÓXIMA! {Fore.YELLOW}:D{Fore.RESET}")
     pass
