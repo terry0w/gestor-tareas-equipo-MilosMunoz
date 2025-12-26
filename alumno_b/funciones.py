@@ -12,19 +12,18 @@ def marcar_completada(fichero):
             textoLinea.append([numero,linea.split("|")])
         numeroTarea = int(input("Ingrese el numero de tarea a marcar: "))
         if len(textoLinea) < numeroTarea+1 or numeroTarea < 0:
-            print(Fore.RED+"❌ El número de tarea no existe")
+            print(Fore.RED+"❌ El número de tarea no existe"+Fore.RESET)
             return
 
         for nTarea in textoLinea:
             if nTarea[0] == numeroTarea:
                 if(nTarea[1][0] == "1"):
-                    print(Fore.YELLOW+ "⚠️ La tarea ya esta completa ")
+                    print(Fore.YELLOW+ "⚠️ La tarea ya esta completa "+Fore.RESET)
                     return
                 else:
                     print(nTarea[1][0])
                     nTarea[1][0] = str(1)
-                    print(Fore.GREEN+"✅ La tarea se ha completado")
-                    print(Fore.RESET+ f"{nTarea}")
+                    print(Fore.GREEN+"✅ La tarea se ha completado"+Fore.RESET+"")
     with open(fichero,"w", encoding="utf-8") as archivoEscritura:
         for nTarea in textoLinea:
             print(f"{nTarea[1][0]}|{nTarea[1][1]}", file=archivoEscritura)
@@ -33,9 +32,33 @@ def marcar_completada(fichero):
 def eliminar_tarea(fichero):
     """Elimina una tarea del fichero."""
     # TODO: Implementar
-    pass
+    textoLinea =[]
+    with open(fichero,"r", encoding="utf-8") as archivo:
+
+        for numero,linea in enumerate(archivo, start=0):
+            linea = linea.strip()
+            print(f"{numero}. {linea}")
+            textoLinea.append([numero,linea.split("|")])
+        numeroTarea = int(input("Ingrese el numero de tarea a eliminar: "))
+
+        if len(textoLinea) < numeroTarea+1 or numeroTarea < 0:
+            print(Fore.RED+"❌ El número de tarea no existe"+Fore.RESET)
+            return
+        for nTarea in textoLinea:
+            if nTarea[0] == numeroTarea:
+                tarea_a_borrar = nTarea
+        textoLinea.remove(tarea_a_borrar)
+        print(textoLinea)
+    with open(fichero,"w", encoding="utf-8") as archivoEscritura:
+        for nTarea in textoLinea:
+            print(f"{nTarea[1][0]}|{nTarea[1][1]}", file=archivoEscritura)
+            print(Fore.GREEN+"✅ La tarea se ha borrado correctamente"+Fore.RESET+"")
+
+pass
 
 def despedida():
     """Muestra mensaje de despedida."""
     # TODO: Implementar
     pass
+
+eliminar_tarea(1)
