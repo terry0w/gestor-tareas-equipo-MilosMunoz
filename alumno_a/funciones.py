@@ -41,4 +41,13 @@ def ver_tareas(fichero):
 def añadir_tarea(fichero):
     """Añade una nueva tarea al fichero."""
     # TODO: Implementar
+    if not os.path.exists("tareas.txt"):
+        with open("tareas.txt", "w", encoding="utf-8") as fichero:
+            pass
+
+    with open(fichero,"a", encoding="utf-8") as fichero:
+        tareaNueva = input("Escriba cual es la nueva tarea que desea añadir a la lista:")
+        
+        fichero.write("0|"+tareaNueva+"\n")
+        print(Fore.GREEN+"tarea añadida con exito"+Fore.RESET)
     pass
