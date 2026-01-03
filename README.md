@@ -39,7 +39,3 @@ git push origin main
 
 # 9. Eliminar la rama local (opcional)
 git branch -d nombre-funcionalidad
-
-# sugiero - Alonso
-hacer un apartado en el readme con el titulo del commit y explicando que has hecho
-
