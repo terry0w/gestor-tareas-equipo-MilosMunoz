@@ -6,7 +6,8 @@ def mostrar_menu():
     # TODO: Implementar
 
     print(Fore.RED+ "=== GESTOR DE TAREAS ===")
-    print(Fore.BLUE+ '''1. Ver tareas
+    print(Fore.BLUE+
+    '''1. Ver tareas
     2. Añadir tarea
     3. Marcar tarea como completada
     4. Eliminar tarea
@@ -15,7 +16,7 @@ def mostrar_menu():
 
     return opcion
 
-def ver_tareas(fichero):
+def ver_tareas():
     """Muestra todas las tareas numeradas."""
     # TODO: Implementar
     if not os.path.exists("tareas.txt"):
@@ -38,14 +39,14 @@ def ver_tareas(fichero):
             print(f"{i}. [{estado_tarea}] {nombre_tarea}")
     pass     
 
-def añadir_tarea(fichero):
+def añadir_tarea():
     """Añade una nueva tarea al fichero."""
     # TODO: Implementar
     if not os.path.exists("tareas.txt"):
         with open("tareas.txt", "w", encoding="utf-8") as fichero:
             pass
 
-    with open(fichero,"a", encoding="utf-8") as fichero:
+    with open("tareas.txt","a", encoding="utf-8") as fichero:
         tareaNueva = input("Escriba cual es la nueva tarea que desea añadir a la lista:")
         
         fichero.write("0|"+tareaNueva+"\n")
