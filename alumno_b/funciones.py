@@ -1,10 +1,10 @@
 from colorama import Fore, Style
 
-def marcar_completada(fichero):
+def marcar_completada():
     """Marca una tarea como completada."""
     # TODO: Implementar
     textoLinea =[]
-    with open(fichero,"r", encoding="utf-8") as archivo:
+    with open("tareas.txt","r", encoding="utf-8") as archivo:
 
         for numero,linea in enumerate(archivo, start=0):
             linea = linea.strip()
@@ -24,16 +24,16 @@ def marcar_completada(fichero):
                     print(nTarea[1][0])
                     nTarea[1][0] = str(1)
                     print(Fore.GREEN+"✅ La tarea se ha completado"+Fore.RESET+"")
-    with open(fichero,"w", encoding="utf-8") as archivoEscritura:
+    with open("tareas.txt","w", encoding="utf-8") as archivoEscritura:
         for nTarea in textoLinea:
             print(f"{nTarea[1][0]}|{nTarea[1][1]}", file=archivoEscritura)
     pass
 
-def eliminar_tarea(fichero):
+def eliminar_tarea():
     """Elimina una tarea del fichero."""
     # TODO: Implementar
     textoLinea =[]
-    with open(fichero,"r", encoding="utf-8") as archivo:
+    with open("tareas.txt","r", encoding="utf-8") as archivo:
 
         for numero,linea in enumerate(archivo, start=0):
             linea = linea.strip()
@@ -49,7 +49,7 @@ def eliminar_tarea(fichero):
                 tarea_a_borrar = nTarea
         textoLinea.remove(tarea_a_borrar)
         print(textoLinea)
-    with open(fichero,"w", encoding="utf-8") as archivoEscritura:
+    with open("tareas.txt","w", encoding="utf-8") as archivoEscritura:
         for nTarea in textoLinea:
             print(f"{nTarea[1][0]}|{nTarea[1][1]}", file=archivoEscritura)
             print(Fore.GREEN+"✅ La tarea se ha borrado correctamente"+Fore.RESET+"")
