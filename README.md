@@ -1,6 +1,23 @@
 # gestor-tareas-equipo-MilosMunoz
 Crear un proyecto portable de gestión de tareas en Python trabajando en parejas mediante GitHub. Los alumnos aprenderán a configurar entornos virtuales, gestionar dependencias y colaborar en un repositorio compartido utilizando ramas y merges. El proyecto está estructurado en módulos para facilitar el trabajo colaborativo.
 
+# requisitos
+python 3.10 + instalar paquetes de requirements.txt
+
+
+# como instalar 
+hacer git clone sobre la url en git
+acceder al directorio del gestor desde la terminar
+usar $python main.py
+
+# usar aplicacion
+la aplicacion es simple y facil de entender usar numeros para las funciones y rellenar los campos como se quiera
+
+# integrantes
+
+Raul Milos
+Alonso Muñoz 
+
 # Reglas del Equipo
 Siempre hacer *git pull origin main* antes de crear una rama nueva
 Siempre hacer *git pull origin main* antes de hacer merge
@@ -39,3 +56,4 @@ git push origin main
 
 # 9. Eliminar la rama local (opcional)
 git branch -d nombre-funcionalidad
+

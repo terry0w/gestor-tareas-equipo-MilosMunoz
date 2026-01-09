@@ -33,7 +33,7 @@ def ver_tareas():
             return
     for i, linea in enumerate(lineas, start=1):
             estado, nombre_tarea = linea.strip().split("|")
-            estado_tarea = "[✓]" 
+            estado_tarea = "[ ]" 
             if estado == "1":
                 estado_tarea = "[✓]"
             print(f"{i}. [{estado_tarea}] {nombre_tarea}")
